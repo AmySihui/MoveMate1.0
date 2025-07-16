@@ -25,7 +25,7 @@ export default function Navbar() {
             asChild
             className="bg-black text-white transition-colors hover:bg-white hover:text-black"
           >
-            <Link to="/login">登录</Link>
+            <Link to="/login">Login</Link>
           </Button>
         </div>
       </div>

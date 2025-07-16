@@ -19,36 +19,38 @@ export default function FeaturesSection() {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        平台亮点
+        Platform Highlights
       </motion.h2>
 
       <div className="flex flex-col justify-between gap-8 md:flex-row">
         {[
           {
-            title: "社区共享",
-            description: "用户可实时上报延误、封路等事件，提升出行透明度。",
+            title: "Community Driven",
+            description:
+              "Users can report delays and incidents to improve travel transparency.",
           },
           {
-            title: "官方数据对接",
-            description: "整合 Luas、DART 等官方 API，信息权威、及时。",
+            title: "Official Data",
+            description:
+              "Integrated with official APIs for reliable and timely information.",
           },
           {
-            title: "全开源透明",
-            description: "项目完全开源，数据与代码可查，确保公信力。",
+            title: "Open Source",
+            description: "Fully open source for transparency and trust.",
           },
         ].map((feature, index) => (
           <motion.div
             key={index}
-            className="flex-1 rounded-lg bg-muted p-6 text-center shadow-md transition hover:shadow-lg"
+            className="mx-2 flex-1 rounded-2xl border border-gray-200 bg-white/80 p-8 text-center shadow-xl transition hover:shadow-2xl"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-            <p className="text-sm text-muted-foreground">
-              {feature.description}
-            </p>
+            <h3 className="mb-2 text-2xl font-bold text-black">
+              {feature.title}
+            </h3>
+            <p className="text-lg text-gray-700">{feature.description}</p>
           </motion.div>
         ))}
       </div>

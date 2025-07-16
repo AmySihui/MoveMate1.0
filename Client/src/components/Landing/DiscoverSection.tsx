@@ -20,42 +20,43 @@ export default function DiscoverSection() {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        MoveMate 三大核心功能
+        Core Features
       </motion.h2>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-10 md:grid-cols-3">
         {[
           {
-            icon: <Map className="h-8 w-8" />,
-            title: "实时地图",
-            description: "查看官方实时数据和社区上报事件，掌握最新交通状况。",
+            icon: <Map className="h-10 w-10" />,
+            title: "Live Map",
+            description:
+              "View official and community-reported transit events in real time.",
           },
           {
-            icon: <UploadCloud className="h-8 w-8" />,
-            title: "上传事件",
+            icon: <UploadCloud className="h-10 w-10" />,
+            title: "Report Events",
             description:
-              "随时上传你遇到的封路、延误等交通事件，帮助更多人避开拥堵。",
+              "Easily upload delays, suspensions, or route changes to help others.",
           },
           {
-            icon: <Radar className="h-8 w-8" />,
-            title: "官方整合",
+            icon: <Radar className="h-10 w-10" />,
+            title: "Official Integration",
             description:
-              "结合 Luas、DART 等官方数据，信息透明高效，一站式掌握。",
+              "Seamlessly combines official APIs for transparent, efficient info.",
           },
         ].map((item, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center gap-4 rounded-lg bg-muted p-6 text-center shadow-md transition hover:shadow-lg"
+            className="flex flex-col items-center gap-5 rounded-2xl border border-gray-200 bg-white/80 p-8 text-center shadow-xl transition hover:shadow-2xl"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
           >
-            <div className="rounded-full bg-primary p-4 text-white">
+            <div className="mb-2 rounded-full bg-black p-5 text-white">
               {item.icon}
             </div>
-            <h3 className="text-xl font-semibold">{item.title}</h3>
-            <p className="text-muted-foreground">{item.description}</p>
+            <h3 className="mb-1 text-2xl font-bold text-black">{item.title}</h3>
+            <p className="text-lg text-gray-700">{item.description}</p>
           </motion.div>
         ))}
       </div>
