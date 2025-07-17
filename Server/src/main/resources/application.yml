@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://movemate-db.czgeuuoi06xx.eu-north-1.rds.amazonaws.com:5432/postgres
+    username: postgres
+    password: db12345678
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+aws:
+  region: eu-north-1
+  s3:
+    bucket: traffic-event-images
+    folder: images/
+    base-url: https://traffic-event-images.s3.eu-north-1.amazonaws.com
+
+cognito:
+  userPoolId: eu-north-1_2g6PNFKYp
+  clientId: 5cef1jie8bjrq3m4lfn9t21rvi
+
+
