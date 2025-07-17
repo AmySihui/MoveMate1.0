@@ -22,16 +22,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-white/10 text-white backdrop-blur-sm">
+    <nav className="w-full bg-zinc-900 text-white shadow">
       <div className="flex w-full items-center justify-between px-6 py-4">
         <Link
           to="/"
-          className="group flex items-center gap-2 text-2xl font-extrabold text-black transition-colors hover:text-white"
+          className="group flex items-center gap-2 text-2xl font-extrabold text-white transition-colors hover:text-zinc-300"
         >
           <img
             src={logo}
             alt="MoveMate Logo"
-            className="h-8 w-8 transition group-hover:brightness-0 group-hover:invert"
+            className="h-8 w-8 transition group-hover:brightness-200"
           />
           MoveMate
         </Link>

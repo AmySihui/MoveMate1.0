@@ -20,10 +20,10 @@ public class DartController {
         this.dartService = dartService;
     }
 
-    //@GetMapping("/stations")
-//    public List<DartStationDTO> getStations() {
-//        return dartService.getAllStations();
-//    }
+    @GetMapping("/stations")
+    public List<DartStationDTO> getStations() {
+        return dartService.getAllStations();
+    }
 
     @GetMapping("/station/{station}")
     public List<DartRealtimeDTO> getRealtimeByStation(@PathVariable String station) {
@@ -35,10 +35,6 @@ public class DartController {
         return dartService.getLinesGeoJson();
     }
 
-    @GetMapping("/stations")
-    public String getStations() {
-        return dartService.getStationsGeoJson();
-    }
 }
 
 

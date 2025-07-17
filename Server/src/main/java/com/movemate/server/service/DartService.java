@@ -77,24 +77,13 @@ public class DartService {
     }
 
     public String getLinesGeoJson() {
-        try (InputStream is = new ClassPathResource("line1.geojson").getInputStream()) {
+        try (InputStream is = new ClassPathResource("dart-line.geojson").getInputStream()) {
             return new String(is.readAllBytes(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load DART GeoJSON", e);
         }
     }
-    public String getStationsGeoJson() {
-        return readResourceFile("station.geojson");
-    }
 
-    private String readResourceFile(String fileName) {
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
-            if (is == null) throw new RuntimeException("GeoJSON not found: " + fileName);
-            return new String(is.readAllBytes(), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to read GeoJSON: " + fileName, e);
-        }
-    }
 
 }
 
