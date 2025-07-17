@@ -11,6 +11,7 @@ interface Station {
   stationCode: string;
   latitude: number;
   longitude: number;
+  lineName?: string;
 }
 
 interface SearchSectionProps {
@@ -25,6 +26,8 @@ export default function SearchSection({ stations }: SearchSectionProps) {
   );
   const setMapCenter = useMapStore((state) => state.setMapCenter);
   const flyToStation = useMapStore((state) => state.flyToStation);
+  const selectedStation = useSidebarStore((state) => state.selectedStation);
+  const setSidebarOpen = useSidebarStore((state) => state.setSidebarOpen);
 
   const filteredStations = Array.isArray(stations)
     ? stations.filter((station) =>
@@ -35,8 +38,19 @@ export default function SearchSection({ stations }: SearchSectionProps) {
     : [];
 
   useEffect(() => {
-    if (!debouncedSearch) setSelectedStation(null);
-  }, [debouncedSearch, setSelectedStation]);
+    if (debouncedSearch && filteredStations.length === 1) {
+      // 只在当前未选中时 set，避免死循环
+      if (
+        !selectedStation ||
+        selectedStation.stationCode !== filteredStations[0].stationCode
+      ) {
+        setSelectedStation(filteredStations[0]);
+        setSidebarOpen(true);
+      }
+    }
+    // 不依赖 filteredStations，避免死循环
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch, setSelectedStation, selectedStation]);
 
   return (
     <div className="space-y-2 p-3">
@@ -53,8 +67,12 @@ export default function SearchSection({ stations }: SearchSectionProps) {
               key={station.stationCode}
               className="cursor-pointer rounded-md p-2 hover:bg-muted"
               onClick={() => {
-                setSelectedStation(station);
+                setSelectedStation({
+                  ...station,
+                  lineName: station.lineName || "DART",
+                });
                 flyToStation(station);
+                setSidebarOpen(true);
               }}
             >
               <div className="font-medium">{station.stationDesc}</div>

@@ -2,10 +2,26 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-export default function LoginPage() {
+function AuthRedirect({ user }: { user: any }) {
   const navigate = useNavigate();
   const location = useLocation();
 
+  useEffect(() => {
+    if (user) {
+      const params = new URLSearchParams(location.search);
+      const redirect = params.get("redirect");
+      if (redirect) {
+        navigate(redirect + location.search, { replace: true });
+      } else {
+        navigate("/", { replace: true });
+      }
+    }
+  }, [user, location, navigate]);
+
+  return null;
+}
+
+export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-white">
       <Authenticator
@@ -40,20 +56,12 @@ export default function LoginPage() {
           },
         }}
       >
-        {({ user }) => {
-          useEffect(() => {
-            if (user) {
-              const params = new URLSearchParams(location.search);
-              const redirect = params.get("redirect");
-              if (redirect) {
-                navigate(redirect + location.search, { replace: true });
-              } else {
-                navigate("/", { replace: true });
-              }
-            }
-          }, [user, location, navigate]);
-          return <div />;
-        }}
+        {({ user }) => (
+          <>
+            <AuthRedirect user={user} />
+            <div />
+          </>
+        )}
       </Authenticator>
     </div>
   );

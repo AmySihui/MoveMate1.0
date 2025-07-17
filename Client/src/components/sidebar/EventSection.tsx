@@ -3,6 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useSidebarStore } from "@/store/sidebarStore";
 import axios from "axios";
+import { getCurrentUser } from "aws-amplify/auth";
+import { Button } from "@/components/ui/button";
 
 interface Event {
   id: number;
@@ -10,45 +12,89 @@ interface Event {
   description: string;
   imageUrls?: string[];
   stopName: string;
+  userSub: string;
 }
 
-export default function EventsSection() {
+interface EventSectionProps {
+  station?: any;
+  onRefetch?: (fn: () => void) => void;
+}
+
+export default function EventSection({
+  station,
+  onRefetch,
+}: EventSectionProps) {
   const { selectedStation } = useSidebarStore();
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(false);
+  const [currentUserSub, setCurrentUserSub] = useState<string>("");
+
+  // 允许外部触发刷新
+  useEffect(() => {
+    if (onRefetch) {
+      onRefetch(() => fetchEvents());
+    }
+    // eslint-disable-next-line
+  }, [onRefetch]);
+
+  const fetchEvents = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get("/api/events/with-images");
+      setEvents(Array.isArray(data) ? data : []);
+    } catch (error) {
+      setEvents([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
+    const fetchUser = async () => {
       try {
-        const { data } = await axios.get("/api/events/with-images");
-        setEvents(Array.isArray(data) ? data : []);
-      } catch (error) {
-        setEvents([]);
-      } finally {
-        setLoading(false);
+        const user = await getCurrentUser();
+        setCurrentUserSub(user.userId || "");
+      } catch {
+        setCurrentUserSub("");
       }
     };
+    fetchUser();
     fetchEvents();
   }, []);
 
+  const handleDelete = async (id: number) => {
+    if (!currentUserSub) return;
+    await axios.delete(`/api/events/${id}?userSub=${currentUserSub}`);
+    await fetchEvents();
+  };
+
   const safeEvents = Array.isArray(events) ? events : [];
 
-  const filteredEvents = selectedStation
-    ? safeEvents.filter(
+  // System Announcements 只显示官方消息（无 userSub 或 userSub === 'SYSTEM'）
+  const isSystemAnnouncement = !(station || selectedStation);
+  const systemEvents = safeEvents.filter(
+    (e) => !e.userSub || e.userSub === "SYSTEM",
+  );
+  const filteredEvents = isSystemAnnouncement
+    ? systemEvents
+    : safeEvents.filter(
         (e) =>
           e.stopName?.toLowerCase() ===
-          selectedStation.stationDesc.toLowerCase(),
-      )
-    : safeEvents;
+          (
+            station?.stationDesc ||
+            selectedStation?.stationDesc ||
+            ""
+          ).toLowerCase(),
+      );
 
   const safeFilteredEvents = Array.isArray(filteredEvents)
     ? filteredEvents
     : [];
 
-  const title = selectedStation
-    ? `${selectedStation.stationDesc} Events`
-    : "System Announcements";
+  const title =
+    station || selectedStation
+      ? `${station?.stationDesc || selectedStation?.stationDesc} Events`
+      : "System Announcements";
 
   return (
     <div className="space-y-3 p-3">
@@ -72,6 +118,17 @@ export default function EventsSection() {
                   alt="Event"
                   className="h-32 w-full rounded object-cover"
                 />
+              )}
+              {/* 删除按钮，仅对自己上报的事件显示 */}
+              {ev.userSub === currentUserSub && (
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => handleDelete(ev.id)}
+                  className="mt-2"
+                >
+                  Delete
+                </Button>
               )}
             </Card>
           ))}

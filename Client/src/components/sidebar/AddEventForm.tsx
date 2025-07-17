@@ -15,6 +15,7 @@ import { useState } from "react";
 import axios from "axios";
 import { getCurrentUser } from "aws-amplify/auth";
 import { useNavigate } from "react-router-dom";
+import { uploadToS3 } from "@/lib/uploadToS3";
 
 const eventFormSchema = z.object({
   eventType: z.string().min(1, "Please select event type"),
@@ -41,15 +42,10 @@ export default function AddEventForm({
   const handleImageUpload = async (file: File) => {
     setUploading(true);
     try {
-      const { data } = await axios.post("/api/s3/presigned-url", {
-        fileName: file.name,
-        fileType: file.type,
-      });
-      await axios.put(data.url, file, {
-        headers: { "Content-Type": file.type },
-      });
-      setImageUrl(data.url.split("?")[0]);
-    } catch {
+      const imageUrl = await uploadToS3(file, "event-images");
+      setImageUrl(imageUrl);
+    } catch (e) {
+      console.error("Image upload failed", e);
       setImageUrl("");
     }
     setUploading(false);
@@ -57,25 +53,52 @@ export default function AddEventForm({
 
   const handleSubmit = async (values: any) => {
     if (!station) return;
-    // Check login
+
+    // Step 1: Cognito 登录校验
+    let userSub = "";
     try {
-      await getCurrentUser();
+      const user = await getCurrentUser();
+      userSub = user.userId || "";
     } catch {
-      navigate("/login");
+      navigate(
+        `/login?redirect=${encodeURIComponent(location.pathname + location.search)}`,
+      );
       return;
     }
-    await axios.post("/api/events", {
-      ...values,
-      stopName: station.stationDesc,
-      latitude: station.latitude,
-      longitude: station.longitude,
-      lineName: station.lineName,
-      status: "pending",
-      imageUrl: imageUrl || undefined,
-    });
-    form.reset();
-    setImageUrl("");
-    onSubmit();
+
+    try {
+      setUploading(true);
+
+      // Step 2: 创建事件（不带 imageUrl）
+      const { data: event } = await axios.post("/api/events", {
+        ...values,
+        stopName: station.stationDesc,
+        latitude: station.latitude,
+        longitude: station.longitude,
+        lineName: station.lineName,
+        status: "pending",
+        userSub,
+      });
+
+      const eventId = event.id;
+
+      // Step 3: 如果有图片，回调 upload-complete
+      if (imageUrl) {
+        await axios.post("/api/event-images/upload-complete", {
+          eventId,
+          imageUrl,
+        });
+      }
+
+      // Step 4: 完成状态
+      form.reset();
+      setImageUrl("");
+      onSubmit();
+    } catch (e) {
+      console.error("Submit event failed", e);
+    } finally {
+      setUploading(false);
+    }
   };
 
   return (

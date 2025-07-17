@@ -1,25 +1,24 @@
-// components/Sidebar.tsx
 import WeatherSection from "./sidebar/WeatherSection";
 import SearchSection from "./sidebar/SearchSection";
 import EventSection from "./sidebar/EventSection";
 import AddEventForm from "./sidebar/AddEventForm";
+import DartRealtimeSection from "./sidebar/DartRealtimeSection";
+import LuasRealtimeSection from "./sidebar/LuasRealtimeSection";
+import AnnouncementSection from "./sidebar/AnnouncementSection";
 import { useSidebarStore } from "@/store/sidebarStore";
 import { Separator } from "@/components/ui/separator";
 import { Card } from "@/components/ui/card";
+import { useRef } from "react";
 
-interface SidebarProps {
-  stations: {
-    stationDesc: string;
-    stationCode: string;
-    latitude: number;
-    longitude: number;
-    lineName?: string;
-  }[];
+export default function Sidebar({
+  stations,
+  className,
+}: {
+  stations: any[];
   className?: string;
-}
-
-export default function Sidebar({ stations, className }: SidebarProps) {
+}) {
   const { selectedStation } = useSidebarStore();
+  const refetchEvents = useRef<() => void>(() => {});
 
   return (
     <aside
@@ -30,19 +29,28 @@ export default function Sidebar({ stations, className }: SidebarProps) {
         <Separator />
         <SearchSection stations={stations} />
         <Separator />
-        <EventSection />
-        <Separator />
-        {selectedStation && typeof selectedStation === "object" && (
-          <AddEventForm
-            station={{
-              stationDesc: selectedStation.stationDesc,
-              stationCode: selectedStation.stationCode,
-              latitude: selectedStation.latitude,
-              longitude: selectedStation.longitude,
-              lineName: selectedStation.lineName ?? "DART",
-            }}
-            onSubmit={() => {}}
-          />
+        {!selectedStation && <AnnouncementSection />}
+        {selectedStation && (
+          <>
+            <EventSection
+              station={selectedStation}
+              onRefetch={(fn) => (refetchEvents.current = fn)}
+            />
+            <Separator />
+            {selectedStation.lineName === "DART" && (
+              <DartRealtimeSection stationDesc={selectedStation.stationDesc} />
+            )}
+            {selectedStation.lineName === "LUAS" && (
+              <LuasRealtimeSection stationDesc={selectedStation.stationDesc} />
+            )}
+
+            <AddEventForm
+              station={selectedStation}
+              onSubmit={() => {
+                refetchEvents.current();
+              }}
+            />
+          </>
         )}
       </Card>
     </aside>

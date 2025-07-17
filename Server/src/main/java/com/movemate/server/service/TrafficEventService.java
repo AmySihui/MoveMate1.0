@@ -35,8 +35,13 @@ public class TrafficEventService {
         return eventRepository.save(event);
     }
 
-    public void deleteById(Long id) {
-        eventRepository.deleteById(id);
+    public boolean deleteByIdAndUserSub(Long id, String userSub) {
+        Optional<TrafficEvent> eventOpt = eventRepository.findById(id);
+        if (eventOpt.isPresent() && eventOpt.get().getUserSub().equals(userSub)) {
+            eventRepository.deleteByIdAndUserSub(id, userSub);
+            return true;
+        }
+        return false;
     }
 
     public List<TrafficEventDTO> findAllWithImages() {

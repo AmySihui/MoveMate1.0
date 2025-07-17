@@ -11,9 +11,13 @@ interface Station {
 interface SidebarStore {
   selectedStation: Station | null;
   setSelectedStation: (station: Station | null) => void;
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
 }
 
 export const useSidebarStore = create<SidebarStore>((set) => ({
   selectedStation: null,
   setSelectedStation: (station) => set({ selectedStation: station }),
+  sidebarOpen: false,
+  setSidebarOpen: (open) => set({ sidebarOpen: open }),
 }));

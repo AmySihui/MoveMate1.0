@@ -15,8 +15,8 @@ public class TrafficEventImage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "event_id", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "traffic_event_id", nullable = false)
     private TrafficEvent trafficEvent;
 
     @Column(name = "image_url", nullable = false, length = 500)

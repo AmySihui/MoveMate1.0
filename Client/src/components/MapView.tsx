@@ -3,6 +3,7 @@ import mapboxgl from "mapbox-gl";
 import axios from "axios";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useMapStore } from "@/store/mapStore";
+import { useSidebarStore } from "@/store/sidebarStore";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN!;
 
@@ -10,6 +11,10 @@ export default function MapView() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const setMapRef = useMapStore((state) => state.setMapRef);
+  const setSidebarSelectedStation = useSidebarStore(
+    (state) => state.setSelectedStation,
+  );
+  const setSidebarOpen = useSidebarStore((state) => state.setSidebarOpen);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -151,10 +156,38 @@ export default function MapView() {
         map.getCanvas().style.cursor = "";
         dartPopup.remove();
       });
+      // 点击 dart 站点，联动侧边栏
+      map.on("click", "dart-stations-layer", (e) => {
+        const props = e.features?.[0].properties;
+        if (props) {
+          setSidebarSelectedStation({
+            stationDesc: props.stationDesc,
+            stationCode: props.stationCode,
+            latitude: e.lngLat.lat,
+            longitude: e.lngLat.lng,
+            lineName: "DART",
+          });
+          setSidebarOpen(true);
+        }
+      });
+      // 点击 luas 站点，联动侧边栏
+      map.on("click", "luas-stations-layer", (e) => {
+        const props = e.features?.[0].properties;
+        if (props) {
+          setSidebarSelectedStation({
+            stationDesc: props.name,
+            stationCode: props.stop_id || props.name,
+            latitude: e.lngLat.lat,
+            longitude: e.lngLat.lng,
+            lineName: "LUAS",
+          });
+          setSidebarOpen(true);
+        }
+      });
     });
 
     return () => map.remove();
-  }, [setMapRef]);
+  }, [setMapRef, setSidebarSelectedStation, setSidebarOpen]);
 
   return <div ref={mapContainer} className="h-full w-full" />;
 }

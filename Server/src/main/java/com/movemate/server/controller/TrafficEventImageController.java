@@ -1,7 +1,10 @@
 package com.movemate.server.controller;
 
+import com.movemate.server.dto.EventImageUploadRequest;
+import com.movemate.server.model.TrafficEvent;
 import com.movemate.server.model.TrafficEventImage;
 import com.movemate.server.service.TrafficEventImageService;
+import lombok.Data;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,8 +44,14 @@ public class TrafficEventImageController {
     }
 
     @PostMapping("/upload-complete")
-    public TrafficEventImage uploadComplete(@RequestBody TrafficEventImage image) {
-        return service.save(image);
+    public TrafficEventImage uploadComplete(@RequestBody EventImageUploadRequest request) {
+        return service.handleUploadComplete(request);
     }
+
+
+
+
+
+
 
 }

@@ -37,11 +37,14 @@ export const useMapStore = create<MapStore>((set, get) => ({
         zoom: 14,
         speed: 1.2,
       });
-      map.setFilter("dart-stations-highlight", [
-        "==",
-        "stationDesc",
-        station.stationDesc,
-      ]);
+      // 移除 dart-stations-highlight 图层相关 setFilter 代码
+      // if (map.getLayer("dart-stations-highlight")) {
+      //   map.setFilter("dart-stations-highlight", [
+      //     "==",
+      //     "stationDesc",
+      //     station.stationDesc,
+      //   ]);
+      // }
     }
   },
   mapCenter: [-6.2603, 53.3498], // 默认中心
