@@ -1,9 +1,8 @@
 package com.movemate.server.service;
 
+import com.movemate.server.dto.PresignedUrlResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import software.amazon.awssdk.core.sync.RequestBody;
-import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 import software.amazon.awssdk.services.s3.presigner.model.PutObjectPresignRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
@@ -20,12 +19,15 @@ public class S3PresignedUrlService {
     @Value("${aws.s3.bucket}")
     private String bucketName;
 
+    @Value("${aws.s3.base-url}")
+    private String baseUrl;
+
     public S3PresignedUrlService(S3Presigner presigner) {
         this.presigner = presigner;
     }
 
-    public String generatePresignedUrl(String folder, String contentType) {
-        String key = folder + UUID.randomUUID();
+    public PresignedUrlResponse generatePresignedUrl(String folder, String fileName, String contentType) {
+        String key = folder + "/" + UUID.randomUUID() + "-" + fileName;
 
         PutObjectRequest objectRequest = PutObjectRequest.builder()
                 .bucket(bucketName)
@@ -38,8 +40,9 @@ public class S3PresignedUrlService {
                 .putObjectRequest(objectRequest)
                 .build();
 
-        URL url = presigner.presignPutObject(presignRequest).url();
+        URL uploadUrl = presigner.presignPutObject(presignRequest).url();
+        String imageUrl = baseUrl + "/" + key;
 
-        return url.toString();
+        return new PresignedUrlResponse(uploadUrl.toString(), imageUrl);
     }
 }

@@ -4,11 +4,15 @@ import com.movemate.server.dto.DartRealtimeDTO;
 import com.movemate.server.dto.DartStationDTO;
 import com.movemate.server.util.XmlUtils;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,4 +75,27 @@ public class DartService {
             throw new RuntimeException("Failed to fetch real-time data for station: " + stationDesc, e);
         }
     }
+
+    public String getLinesGeoJson() {
+        try (InputStream is = new ClassPathResource("line1.geojson").getInputStream()) {
+            return new String(is.readAllBytes(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load DART GeoJSON", e);
+        }
+    }
+    public String getStationsGeoJson() {
+        return readResourceFile("station.geojson");
+    }
+
+    private String readResourceFile(String fileName) {
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (is == null) throw new RuntimeException("GeoJSON not found: " + fileName);
+            return new String(is.readAllBytes(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read GeoJSON: " + fileName, e);
+        }
+    }
+
 }
+
+

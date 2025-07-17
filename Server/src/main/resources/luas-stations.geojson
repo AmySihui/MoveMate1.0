@@ -1,0 +1,2224 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-07-17T09:22:26Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/665844",
+        "layer": "1",
+        "name": "Cowper",
+        "name:en": "Cowper",
+        "name:ga": "Cowper",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cowper/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2534261,
+          53.3164812
+        ]
+      },
+      "id": "node/665844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/666663",
+        "layer": "1",
+        "name": "Milltown",
+        "name:en": "Milltown",
+        "name:ga": "Baile An Mhuilinn",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/milltown/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2517091,
+          53.3099147
+        ]
+      },
+      "id": "node/666663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/19223931",
+        "name": "Windy Arbour",
+        "name:en": "Windy Arbour",
+        "name:ga": "Na Glasáin",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/windy-arbour/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2507018,
+          53.301591
+        ]
+      },
+      "id": "node/19223931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/51452839",
+        "name": "Stillorgan",
+        "name:en": "Stillorgan",
+        "name:ga": "Stigh Lorgan",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/stillorgan/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2101538,
+          53.2793978
+        ]
+      },
+      "id": "node/51452839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/51452916",
+        "name": "Harcourt",
+        "name:ga": "Sráid Fhearchair",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/harcourt/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2626171,
+          53.3333651
+        ]
+      },
+      "id": "node/51452916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/51452944",
+        "name": "St. Stephen's Green",
+        "name:en": "St. Stephen's Green",
+        "name:ga": "Faiche Stiabhna",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/st-stephens-green/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2613147,
+          53.3390566
+        ]
+      },
+      "id": "node/51452944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/60475466",
+        "alt_name:en": "Charlemont Luas",
+        "alt_name:ga": "Luas Charlemont",
+        "layer": "1",
+        "name": "Charlemont",
+        "name:en": "Charlemont",
+        "name:ga": "Charlemont",
+        "note": "Lift to Grand Parade only, none to Charlemont Place",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/charlemont/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2587038,
+          53.3307198
+        ]
+      },
+      "id": "node/60475466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/60939192",
+        "name": "Kilmacud",
+        "name:en": "Kilmacud",
+        "name:ga": "Cill Mochuda",
+        "note": "Wheelchair access from Benildus Avenue and Drummartin Link Road via lifts.",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/kilmacud/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2241937,
+          53.2830317
+        ]
+      },
+      "id": "node/60939192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/247700851",
+        "layer": "1",
+        "line": "Luas Red Line",
+        "name": "Suir Road",
+        "name:en": "Suir Road",
+        "name:ga": "Bóthar na Siúire",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/suir-road/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3072591,
+          53.3366224
+        ]
+      },
+      "id": "node/247700851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/247702675",
+        "alt_name:ga": "Coill na Feá",
+        "layer": "1",
+        "name": "Beechwood",
+        "name:en": "Beechwood",
+        "name:ga": "Bóthar Coill na Feá",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/beechwood/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2546297,
+          53.3208449
+        ]
+      },
+      "id": "node/247702675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/247857993",
+        "line": "Luas Red Line",
+        "name": "Goldenbridge",
+        "name:en": "Goldenbridge",
+        "name:ga": "An Droichead Órga",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/goldenbridge/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3135686,
+          53.3359036
+        ]
+      },
+      "id": "node/247857993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/247857995",
+        "line": "Luas Red Line",
+        "name": "Blackhorse",
+        "name:en": "Blackhorse",
+        "name:ga": "An Capall Dubh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/blackhorse/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.327416,
+          53.3342735
+        ]
+      },
+      "id": "node/247857995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250292908",
+        "line": "Luas Green Line",
+        "name": "Glencairn",
+        "name:en": "Glencairn",
+        "name:ga": "Ghleann an Chairn",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/glencairn/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2099918,
+          53.2662801
+        ]
+      },
+      "id": "node/250292908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250292914",
+        "line": "Luas Green Line",
+        "name": "The Gallops",
+        "name:en": "The Gallops",
+        "name:ga": "An Eachrais",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/the-gallops/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2059396,
+          53.261144
+        ]
+      },
+      "id": "node/250292914"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/250292927",
+        "line": "Luas Green Line",
+        "name": "Carrickmines",
+        "name:en": "Carrickmines",
+        "name:ga": "Carraig Mhaighin",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/carrickmines/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1699587,
+          53.2540355
+        ]
+      },
+      "id": "node/250292927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312656638",
+        "line": "Luas Red Line",
+        "name": "Hospital",
+        "name:ga": "Ospidéal Thamhlachta",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/hospital/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3788565,
+          53.2893571
+        ]
+      },
+      "id": "node/312656638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/312656643",
+        "name": "Cookstown",
+        "name:ga": "Baile on Chócaigh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cookstown/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.38441,
+          53.2934954
+        ]
+      },
+      "id": "node/312656643"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412184068",
+        "line": "Luas Green Line",
+        "name": "Cherrywood",
+        "name:en": "Cherrywood",
+        "name:ga": "Coill na Silíní",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cherrywood/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1458674,
+          53.2453533
+        ]
+      },
+      "id": "node/412184068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412184074",
+        "line": "Luas Green Line",
+        "name": "Bride's Glen",
+        "name:en": "Bride's Glen",
+        "name:ga": "Gleann Bhríde",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/brides-glen/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1428525,
+          53.2420601
+        ]
+      },
+      "id": "node/412184074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/412184586",
+        "line": "Luas Green Line",
+        "name": "Laughanstown",
+        "name:en": "Laughanstown",
+        "name:ga": "Baile an Locháin",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/laughanstown/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1549992,
+          53.2506093
+        ]
+      },
+      "id": "node/412184586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/702028282",
+        "line": "Luas Green Line",
+        "name": "Ballyogan Wood",
+        "name:en": "Ballyogan Wood",
+        "name:ga": "Coill Bhaile Uí Ógáin",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/ballyogan-wood/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.184424,
+          53.2550296
+        ]
+      },
+      "id": "node/702028282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/719041779",
+        "line": "Luas Red Line",
+        "name": "Citywest Campus",
+        "name:en": "Citywest Campus",
+        "name:ga": "Campas Gnó Iarthar na Cathrach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/citywest-campus/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4189193,
+          53.2878313
+        ]
+      },
+      "id": "node/719041779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/719041781",
+        "line": "Luas Red Line",
+        "name": "Fettercairn",
+        "name:en": "Fettercairn",
+        "name:ga": "Fothair Chardain",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/fettercairn/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3955398,
+          53.2935359
+        ]
+      },
+      "id": "node/719041781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/719041785",
+        "line": "Luas Red Line",
+        "name": "Fortunestown",
+        "name:en": "Fortunestown",
+        "name:ga": "Baile Uí Fhoirtcheirn",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/fortunestown/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4245775,
+          53.2842599
+        ]
+      },
+      "id": "node/719041785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/954731669",
+        "line": "Luas Green Line",
+        "name": "Leopardstown Valley",
+        "name:ga": "Gleann Bhaile na Lobhar",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/leopardstown-valley/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1983784,
+          53.2582698
+        ]
+      },
+      "id": "node/954731669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/954886380",
+        "line": "Luas Green Line",
+        "name": "Central Park",
+        "name:en": "Central Park",
+        "name:ga": "An Pháirc Láir",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/central-park/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.203825,
+          53.2700995
+        ]
+      },
+      "id": "node/954886380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1221182127",
+        "name": "Dundrum",
+        "name:en": "Dundrum",
+        "name:ga": "Dún Droma",
+        "note": "Wheelchair access via lift at Main Street, adjacent to main bridge. Wheelchair access via ramps at Taney Drive. No wheelchair access at Usher House / Dundrum Office Park",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/dundrum/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2451244,
+          53.2923909
+        ]
+      },
+      "id": "node/1221182127"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1294004355",
+        "bench": "yes",
+        "line": "Luas Red Line",
+        "name": "Busáras",
+        "name:ga": "Busáras",
+        "note": "Wheelchair access - ramp only at east end of stop, steps only at west end of stop.",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/busaras/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2511865,
+          53.3500523
+        ]
+      },
+      "id": "node/1294004355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1329822333",
+        "line": "Luas Red Line",
+        "name": "Cheeverstown",
+        "name:en": "Cheeverstown",
+        "name:ga": "Baile an tSíbhrigh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cheeverstown/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4068506,
+          53.290994
+        ]
+      },
+      "id": "node/1329822333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396867040",
+        "bench": "yes",
+        "bin": "yes",
+        "line": "Luas Red Line",
+        "name": "Museum",
+        "name:en": "Museum",
+        "name:ga": "Ard-Mhúsaem",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/museum/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2867327,
+          53.3478775
+        ]
+      },
+      "id": "node/1396867040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396871412",
+        "line": "Luas Red Line",
+        "name": "James's",
+        "name:en": "James's",
+        "name:ga": "Ospidéal San Séamas",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/jamess/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.293363,
+          53.3418837
+        ]
+      },
+      "id": "node/1396871412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396874422",
+        "line": "Luas Red Line",
+        "name": "Kylemore",
+        "name:en": "Kylemore",
+        "name:ga": "An Choill Mhóir",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/kylemore/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3435665,
+          53.3266359
+        ]
+      },
+      "id": "node/1396874422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396878999",
+        "line": "Luas Red Line",
+        "name": "Fatima",
+        "name:ga": "Fatima",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "toilets:wheelchair": "no",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/fatima/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2925134,
+          53.3384498
+        ]
+      },
+      "id": "node/1396878999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396885859",
+        "line": "Luas Red Line",
+        "name": "Rialto",
+        "name:ga": "Rialto",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/rialto/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2972219,
+          53.337923
+        ]
+      },
+      "id": "node/1396885859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396888181",
+        "line": "Luas Red Line",
+        "name": "Drimnagh",
+        "name:en": "Drimnagh",
+        "name:ga": "Droimeanach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/drimnagh/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3180819,
+          53.3353824
+        ]
+      },
+      "id": "node/1396888181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396891181",
+        "line": "Luas Red Line",
+        "name": "Red Cow",
+        "name:ga": "An Bhó Dhearg",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/red-cow/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3698479,
+          53.3168536
+        ]
+      },
+      "id": "node/1396891181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396896492",
+        "line": "Luas Red Line",
+        "name": "Bluebell",
+        "name:en": "Bluebell",
+        "name:ga": "An Cloigín Gorm",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/bluebell/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3338757,
+          53.3292856
+        ]
+      },
+      "id": "node/1396896492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1396932782",
+        "line": "Luas Red Line",
+        "name": "Tallaght",
+        "name:ga": "Tamhlacht",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "toilets:wheelchair": "no",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/tallaght/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3746438,
+          53.2874685
+        ]
+      },
+      "id": "node/1396932782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1422018946",
+        "bench": "yes",
+        "bin": "yes",
+        "line": "Luas Red Line",
+        "name": "Heuston",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/heuston/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2918069,
+          53.3466535
+        ]
+      },
+      "id": "node/1422018946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1422062053",
+        "line": "Luas Red Line",
+        "name": "Spencer Dock",
+        "name:ga": "Duga Spencer",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/spencer-dock/",
+        "wheelchair": "yes",
+        "wikidata": "Q104881402"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2371518,
+          53.348827
+        ]
+      },
+      "id": "node/1422062053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1424006124",
+        "line": "Luas Red Line",
+        "name": "Kingswood",
+        "name:ga": "Coill an Rí",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://luas.ie/kingswood.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3653029,
+          53.3036947
+        ]
+      },
+      "id": "node/1424006124"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2363501445",
+        "addr:street": "Cabra Road",
+        "alt_name:en": "Phibsborough Luas",
+        "alt_name:ga": "Luas Baile Phib",
+        "name": "Phibsborough",
+        "name:en": "Phibsborough",
+        "name:ga": "Baile Phib",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/phibsborough/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2789691,
+          53.3604184
+        ]
+      },
+      "id": "node/2363501445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2368752999",
+        "line": "Luas Green Line",
+        "name": "Sandyford",
+        "name:en": "Sandyford",
+        "name:ga": "Áth An Ghainimh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "shelter_type": "public_transport",
+        "tram": "yes",
+        "website": "https://luas.ie/sandyford.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2049694,
+          53.2776274
+        ]
+      },
+      "id": "node/2368752999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2418681423",
+        "line": "Luas Red Line",
+        "name": "Abbey Street",
+        "name:en": "Abbey Street",
+        "name:ga": "Sráid na Mainistreach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/abbey-street/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2581728,
+          53.348605
+        ]
+      },
+      "id": "node/2418681423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2685561297",
+        "line": "Luas Red Line",
+        "name": "Mayor Square - NCI",
+        "name:ga": "Cearnóg an Mhéara - CNÉ",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/mayor-square-nci/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2433875,
+          53.3492541
+        ]
+      },
+      "id": "node/2685561297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2801660621",
+        "line": "Luas Red Line",
+        "name": "Connolly",
+        "name:en": "Connolly",
+        "name:ga": "Conghaile",
+        "note": "Wheelchair access. Via ramps to Amiens Street. Via lift from Luas platforms to station forecourt, at information desk. Via lift from station lower concourse to station main concourse. Access to Harbourmaster Place via Mayor Street Lower.",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/connolly/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2499702,
+          53.3509039
+        ]
+      },
+      "id": "node/2801660621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3257148989",
+        "line": "Luas Red Line",
+        "name": "George's Dock",
+        "name:ga": "Duga Sheoirse",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/georges-dock/",
+        "wheelchair": "yes",
+        "wikidata": "Q5535862"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2475822,
+          53.3495337
+        ]
+      },
+      "id": "node/3257148989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3265722896",
+        "name": "Belgard",
+        "name:ga": "Belgard",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/belgard/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3754222,
+          53.2989625
+        ]
+      },
+      "id": "node/3265722896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451120785",
+        "name": "Jervis",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/jervis/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2658498,
+          53.3476367
+        ]
+      },
+      "id": "node/3451120785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451159931",
+        "line": "Luas Red Line",
+        "name": "Four Courts",
+        "name:en": "Four Courts",
+        "name:ga": "Na Ceithre Cúirteanna",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/four-courts/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.273663,
+          53.3468955
+        ]
+      },
+      "id": "node/3451159931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451213775",
+        "name": "Harcourt",
+        "name:ga": "Sráid Fhearchair",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/harcourt/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2626937,
+          53.3333557
+        ]
+      },
+      "id": "node/3451213775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451318404",
+        "name": "Jervis",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/jervis/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2652271,
+          53.3476996
+        ]
+      },
+      "id": "node/3451318404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451722881",
+        "alt_name:en": "Charlemont Luas",
+        "alt_name:ga": "Luas Charlemont",
+        "layer": "1",
+        "name": "Charlemont",
+        "name:en": "Charlemont",
+        "name:ga": "Charlemont",
+        "note": "Lift to Grand Parade only, none to Charlemont Place",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/charlemont/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.258738,
+          53.330697
+        ]
+      },
+      "id": "node/3451722881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451767974",
+        "name": "Dundrum",
+        "name:en": "Dundrum",
+        "name:ga": "Dún Droma",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/dundrum/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2451688,
+          53.2923748
+        ]
+      },
+      "id": "node/3451767974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451853433",
+        "line": "Luas Green Line",
+        "name": "Cherrywood",
+        "name:en": "Cherrywood",
+        "name:ga": "Coill na Silíní",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cherrywood/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1458962,
+          53.2453308
+        ]
+      },
+      "id": "node/3451853433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451853453",
+        "line": "Luas Green Line",
+        "name": "Bride's Glen",
+        "name:en": "Bride's Glen",
+        "name:ga": "Gleann Bhríde",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/brides-glen/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1429017,
+          53.2420458
+        ]
+      },
+      "id": "node/3451853453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3451922903",
+        "name": "Marlborough",
+        "name:ga": "Maoilbhríde",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/marlborough/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2577573,
+          53.3491832
+        ]
+      },
+      "id": "node/3451922903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3452011330",
+        "name": "Westmoreland",
+        "name:en": "Westmoreland",
+        "name:ga": "Westmoreland",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/westmoreland/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2590268,
+          53.346326
+        ]
+      },
+      "id": "node/3452011330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3452114231",
+        "addr:street": "Rathdown Road",
+        "alt_name:en": "Grangegorman Luas",
+        "alt_name:ga": "Luas Gráinseach Ghormáin",
+        "name": "Grangegorman",
+        "name:en": "Grangegorman",
+        "name:ga": "Gráinseach Ghormáin",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/grangegorman/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.27739,
+          53.357098
+        ]
+      },
+      "id": "node/3452114231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3452492564",
+        "addr:street": "Constitution Hill",
+        "name": "Broadstone - University",
+        "name:ga": "An Chloch Leathan - Ollscoil",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/broadstone-university/",
+        "wheelchair": "yes",
+        "wikidata": "Q4972306"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2737932,
+          53.3540939
+        ]
+      },
+      "id": "node/3452492564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3452492565",
+        "addr:street": "Dominick Street Lower",
+        "name": "Dominick",
+        "name:ga": "Doiminic",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/dominick/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2655263,
+          53.3513944
+        ]
+      },
+      "id": "node/3452492565"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3452493714",
+        "name": "Dawson",
+        "name:ga": "Dásain",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/dawson/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.257987,
+          53.342166
+        ]
+      },
+      "id": "node/3452493714"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3454077676",
+        "name": "Citywest Campus",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/citywest-campus/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4188906,
+          53.2878132
+        ]
+      },
+      "id": "node/3454077676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3459902186",
+        "alt_name": "Trinity College",
+        "alt_name:ga": "An Tríonóid",
+        "loc_name:en": "Trinity Luas",
+        "loc_name:ga": "Luas An Tríonóid",
+        "name": "Trinity",
+        "name:en": "Trinity",
+        "name:ga": "Tríonóid",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/trinity/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2582748,
+          53.3453267
+        ]
+      },
+      "id": "node/3459902186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3459902187",
+        "alt_name:en": "O'Connell - GPO Luas",
+        "alt_name:ga": "Luas Ó Conaill AOP",
+        "name": "O'Connell - GPO",
+        "name:en": "O'Connell - GPO",
+        "name:ga": "Ó Conaill AOP",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/oconnell-gpo/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2599274,
+          53.3488429
+        ]
+      },
+      "id": "node/3459902187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3459902189",
+        "alt_name:en": "O'Connell Upper Luas",
+        "alt_name:ga": "Luas Ó Conaill Uachtarach",
+        "name": "O'Connell Upper",
+        "name:en": "O'Connell Upper",
+        "name:ga": "Ó Conaill Uachtarach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/oconnell-upper/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2610816,
+          53.3515891
+        ]
+      },
+      "id": "node/3459902189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3459902190",
+        "alt_name:en": "Parnell Luas",
+        "alt_name:ga": "Luas Parnell",
+        "name": "Parnell",
+        "name:ga": "Parnell",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/parnell/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2604649,
+          53.3530703
+        ]
+      },
+      "id": "node/3459902190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4009942996",
+        "layer": "1",
+        "line": "Luas Green Line",
+        "name": "Ranelagh",
+        "name:en": "Ranelagh",
+        "name:ga": "Raghnallach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/ranelagh/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.256152,
+          53.326274
+        ]
+      },
+      "id": "node/4009942996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4010198395",
+        "name": "Sandyford",
+        "name:en": "Sandyford",
+        "name:ga": "Áth An Ghainimh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "shelter_type": "public_transport",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/sandyford/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.204897,
+          53.2777044
+        ]
+      },
+      "id": "node/4010198395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4392909450",
+        "addr:street": "Rathdown Road",
+        "alt_name:en": "Grangegorman Luas",
+        "alt_name:ga": "Luas Gráinseach Ghormáin",
+        "name": "Grangegorman",
+        "name:en": "Grangegorman",
+        "name:ga": "Gráinseach Ghormáin",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/grangegorman/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2773204,
+          53.3571083
+        ]
+      },
+      "id": "node/4392909450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4669407702",
+        "addr:street": "Connaught Street",
+        "alt_name:en": "Cabra Luas",
+        "alt_name:ga": "Luas Cabrach",
+        "name": "Cabra",
+        "name:en": "Cabra",
+        "name:ga": "Cabrach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/phibsborough/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2818095,
+          53.3640708
+        ]
+      },
+      "id": "node/4669407702"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683372263",
+        "line": "Luas Red Line",
+        "name": "Hospital",
+        "name:ga": "Ospidéal Thamhlachta",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/hospital/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3788125,
+          53.2893673
+        ]
+      },
+      "id": "node/4683372263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683372274",
+        "bench": "yes",
+        "bin": "yes",
+        "line": "Red Line",
+        "name": "Heuston",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/heuston/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2916785,
+          53.3466571
+        ]
+      },
+      "id": "node/4683372274"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683372275",
+        "bench": "yes",
+        "line": "Red Line",
+        "name": "Heuston",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/heuston/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2917284,
+          53.3466557
+        ]
+      },
+      "id": "node/4683372275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697859",
+        "bin": "yes",
+        "name": "Sandyford",
+        "name:en": "Sandyford",
+        "name:ga": "Áth An Ghainimh",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "shelter": "yes",
+        "shelter_type": "public_transport",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/sandyford/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2049218,
+          53.2776778
+        ]
+      },
+      "id": "node/4683697859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697860",
+        "name": "Laughanstown",
+        "name:en": "Laughanstown",
+        "name:ga": "Baile an Locháin",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/laughanstown/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1550347,
+          53.2505864
+        ]
+      },
+      "id": "node/4683697860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697861",
+        "line": "Luas Green Line",
+        "name": "Carrickmines",
+        "name:en": "Carrickmines",
+        "name:ga": "Carraig Mhaighin",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/carrickmines/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1699759,
+          53.2540093
+        ]
+      },
+      "id": "node/4683697861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697862",
+        "line": "Luas Green Line",
+        "lit": "yes",
+        "name": "Ballyogan Wood",
+        "name:en": "Ballyogan Wood",
+        "name:ga": "Coill Bhaile Uí Ógáin",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/ballyogan-wood/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1844424,
+          53.2550042
+        ]
+      },
+      "id": "node/4683697862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697863",
+        "line": "Luas Green Line",
+        "name": "Leopardstown Valley",
+        "name:en": "Leopardstown Valley",
+        "name:ga": "Gleann Bhaile na Lobhar",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/leopardstown-valley/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1984067,
+          53.2582459
+        ]
+      },
+      "id": "node/4683697863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697864",
+        "line": "Luas Green Line",
+        "name": "The Gallops",
+        "name:en": "The Gallops",
+        "name:ga": "An Eachrais",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/the-gallops/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2059611,
+          53.2611155
+        ]
+      },
+      "id": "node/4683697864"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697865",
+        "line": "Luas Green Line",
+        "name": "Glencairn",
+        "name:en": "Glencairn",
+        "name:ga": "Ghleann an Chairn",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/glencairn/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2100364,
+          53.2662872
+        ]
+      },
+      "id": "node/4683697865"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697866",
+        "line": "Luas Green Line",
+        "name": "Central Park",
+        "name:en": "Central Park",
+        "name:ga": "An Pháirc Láir",
+        "network": "Luas Green Line",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/central-park/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.203861,
+          53.2701088
+        ]
+      },
+      "id": "node/4683697866"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697867",
+        "name": "Stillorgan",
+        "name:en": "Stillorgan",
+        "name:ga": "Stigh Lorgan",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/stillorgan/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2101802,
+          53.2793746
+        ]
+      },
+      "id": "node/4683697867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697872",
+        "name": "Cowper",
+        "name:en": "Cowper",
+        "name:ga": "Cowper",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/cowper/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.253471,
+          53.3164779
+        ]
+      },
+      "id": "node/4683697872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4683697873",
+        "name": "Beechwood",
+        "name:en": "Beechwood",
+        "name:ga": "Bóthar Coill na Feá",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/beechwood/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.254678,
+          53.3208392
+        ]
+      },
+      "id": "node/4683697873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5290694070",
+        "addr:street": "Broombridge Road",
+        "alt_name:en": "Broombridge Luas",
+        "alt_name:ga": "Luas Droichead Broome",
+        "name": "Broombridge",
+        "name:en": "Broombridge",
+        "name:ga": "Droichead Broome",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/broombridge/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2980835,
+          53.3723365
+        ]
+      },
+      "id": "node/5290694070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5298637240",
+        "addr:street": "Dominick Street Lower",
+        "name": "Dominick",
+        "name:ga": "Doiminic",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://luas.ie/dominick.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2657285,
+          53.3514157
+        ]
+      },
+      "id": "node/5298637240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5300294494",
+        "addr:street": "Broombridge Road",
+        "alt_name:en": "Broombridge Luas",
+        "alt_name:ga": "Luas Droichead Broome",
+        "name": "Broombridge",
+        "name:en": "Broombridge",
+        "name:ga": "Droichead Broome",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/broombridge/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2980963,
+          53.3723073
+        ]
+      },
+      "id": "node/5300294494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7176331796",
+        "addr:street": "Connaught Street",
+        "alt_name:en": "Cabra Luas",
+        "alt_name:ga": "Luas Cabrach",
+        "name": "Cabra",
+        "name:en": "Cabra",
+        "name:ga": "Cabrach",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/phibsborough/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2817747,
+          53.3641011
+        ]
+      },
+      "id": "node/7176331796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7176331797",
+        "addr:street": "Cabra Road",
+        "alt_name:en": "Phibsborough Luas",
+        "alt_name:ga": "Luas Baile Phib",
+        "name": "Phibsborough",
+        "name:en": "Phibsborough",
+        "name:ga": "Baile Phib",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "passenger_information_display": "yes",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/phibsborough/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2789041,
+          53.3604282
+        ]
+      },
+      "id": "node/7176331797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7176331798",
+        "name": "Dawson",
+        "name:ga": "Dásain",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/dawson/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2579465,
+          53.3420744
+        ]
+      },
+      "id": "node/7176331798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8398652317",
+        "addr:street": "Constitution Hill",
+        "name": "Broadstone - University",
+        "name:ga": "An Chloch Leathan - Ollscoil",
+        "operator": "Luas - Transdev Dublin Light Rail Limited",
+        "public_transport": "stop_position",
+        "railway": "tram_stop",
+        "tram": "yes",
+        "website": "https://www.luas.ie/stops/broadstone-university/",
+        "wheelchair": "yes",
+        "wikidata": "Q4972306"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.273777,
+          53.3540608
+        ]
+      },
+      "id": "node/8398652317"
+    }
+  ]
+}

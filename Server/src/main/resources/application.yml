@@ -20,10 +20,10 @@ aws:
   s3:
     bucket: traffic-event-images
     folder: images/
+    base-url: https://traffic-event-images.s3.eu-north-1.amazonaws.com
 
 cognito:
-  userPoolId: <?? Cognito user pool ID>
-  clientId: <???? app client ID>
-  region: eu-west-1
+  userPoolId: eu-north-1_2g6PNFKYp
+  clientId: 5cef1jie8bjrq3m4lfn9t21rvi
 
 

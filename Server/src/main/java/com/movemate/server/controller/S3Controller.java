@@ -1,5 +1,6 @@
 package com.movemate.server.controller;
 
+import com.movemate.server.dto.PresignedUrlResponse;
 import com.movemate.server.service.S3PresignedUrlService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,7 @@ public class S3Controller {
     }
 
     @GetMapping("/api/s3/presigned-url")
-    public String getPresignedUrl(@RequestParam String folder, @RequestParam String contentType) {
-        return presignedUrlService.generatePresignedUrl(folder, contentType);
+    public PresignedUrlResponse getPresignedUrl(@RequestParam String folder, @RequestParam String fileName, @RequestParam String contentType) {
+        return presignedUrlService.generatePresignedUrl(folder, fileName, contentType);
     }
 }

@@ -14,9 +14,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import bg from "@/assets/homePage.jpg";
+import { Link } from "react-router-dom";
+import { signUp } from "@aws-amplify/auth";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
-  fullName: z.string().min(2, "请输入姓名"),
+  username: z.string().min(3, "请输入用户名（不能是邮箱）"),
   email: z.string().email("请输入有效邮箱"),
   password: z.string().min(6, "密码不少于6位"),
 });
@@ -25,20 +28,46 @@ export default function HeroSection() {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: "",
+      username: "",
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = (values: any) => {
-    console.log("注册信息：", values);
-    // Step 3：接 Cognito 注册
+  const navigate = useNavigate();
+  const onSubmit = async (values: any) => {
+    try {
+      const { username, email, password } = values;
+      try {
+        await signUp({
+          username,
+          password,
+          options: {
+            userAttributes: {
+              email,
+            },
+          },
+        });
+        console.log("注册成功");
+        navigate("/login");
+      } catch (error: any) {
+        console.error("注册失败:", error);
+        form.setError("username", { type: "manual", message: error.message });
+      }
+
+      navigate("/login");
+    } catch (error: any) {
+      console.error("注册失败：", error);
+      form.setError("email", {
+        type: "manual",
+        message: error.message || "注册失败",
+      });
+    }
   };
 
   return (
     <section
-      className="relative flex min-h-screen items-center bg-cover bg-center px-6 text-white md:px-12"
+      className="relative flex min-h-[80vh] items-center bg-cover bg-center px-6 text-white md:px-12"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="backdrop-brightness-45 absolute inset-0 bg-slate-900/50"></div>
@@ -56,8 +85,11 @@ export default function HeroSection() {
             Search for routes and view live transit maps with ease.
           </p>
           <div className="flex gap-4">
-            <Button className="bg-black px-12 py-6 text-3xl text-white transition-colors hover:bg-white hover:text-black">
-              Get Started
+            <Button
+              asChild
+              className="bg-black px-12 py-6 text-3xl text-white transition-colors hover:bg-white hover:text-black"
+            >
+              <Link to="/map">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -68,14 +100,14 @@ export default function HeroSection() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
                 control={form.control}
-                name="fullName"
+                name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>Username</FormLabel>
                     <FormControl>
                       <Input
                         className="text-lg"
-                        placeholder="Enter your name"
+                        placeholder="Enter a username (not email)"
                         {...field}
                       />
                     </FormControl>
