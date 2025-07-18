@@ -1,5 +1,6 @@
 package com.movemate.server.model;
 
+import com.movemate.server.enums.EventStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -22,7 +23,7 @@ public class TrafficEventImage {
     @Column(name = "image_url", nullable = false, length = 500)
     private String imageUrl;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @PrePersist
@@ -30,5 +31,11 @@ public class TrafficEventImage {
         createdAt = LocalDateTime.now();
     }
 
+    @Column(nullable = false)
+    private Integer reportCount = 0;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EventStatus status = EventStatus.ACTIVE;
 
 }

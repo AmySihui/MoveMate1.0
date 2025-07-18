@@ -30,4 +30,7 @@ nta:
   api:
     key: 1d78b157e3264d67944047b537d683c3
 
-
+huggingface:
+  api:
+    key: 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
+    url: https://api-inference.huggingface.co/models/unitary/toxic-bert

@@ -1,5 +1,6 @@
 package com.movemate.server.model;
 
+import com.movemate.server.enums.EventStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -36,11 +37,15 @@ public class TrafficEvent {
     @Column(nullable = false)
     private Double longitude;
 
-    @Column(nullable = false, length = 50)
-    private String status = "pending";
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private Integer reportCount = 0;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EventStatus status = EventStatus.ACTIVE;
 
     @PrePersist
     protected void onCreate() {

@@ -1,10 +1,9 @@
 package com.movemate.server.controller;
 
 import com.movemate.server.dto.EventImageUploadRequest;
-import com.movemate.server.model.TrafficEvent;
 import com.movemate.server.model.TrafficEventImage;
 import com.movemate.server.service.TrafficEventImageService;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/event-images")
+@RequiredArgsConstructor
 public class TrafficEventImageController {
 
     private final TrafficEventImageService service;
-
-    public TrafficEventImageController(TrafficEventImageService service) {
-        this.service = service;
-    }
 
     @GetMapping("/event/{eventId}")
     public List<TrafficEventImage> getImagesByEvent(@PathVariable Long eventId) {
@@ -43,15 +39,11 @@ public class TrafficEventImageController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/upload-complete")
-    public TrafficEventImage uploadComplete(@RequestBody EventImageUploadRequest request) {
-        return service.handleUploadComplete(request);
+
+
+    @PostMapping("/report/{id}")
+    public ResponseEntity<String> reportImage(@PathVariable Long id) {
+        service.reportImage(id);
+        return ResponseEntity.ok("Image reported successfully.");
     }
-
-
-
-
-
-
-
 }

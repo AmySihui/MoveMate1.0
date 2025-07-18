@@ -1,10 +1,12 @@
 package com.movemate.server.service;
 
 import com.movemate.server.dto.EventImageUploadRequest;
+import com.movemate.server.enums.EventStatus;
 import com.movemate.server.model.TrafficEvent;
 import com.movemate.server.model.TrafficEventImage;
 import com.movemate.server.repository.TrafficEventImageRepository;
 import com.movemate.server.repository.TrafficEventRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,13 +42,14 @@ public class TrafficEventImageService {
         repository.deleteById(id);
     }
 
-    public TrafficEventImage handleUploadComplete(EventImageUploadRequest request) {
-        TrafficEvent event = eventRepository.findById(request.getEventId())
-                .orElseThrow(() -> new RuntimeException("Event not found"));
-
-        TrafficEventImage image = new TrafficEventImage();
-        image.setTrafficEvent(event);
-        image.setImageUrl(request.getImageUrl());
-        return repository.save(image);
+    public void reportImage(Long imageId) {
+        repository.findById(imageId).ifPresent(image -> {
+            image.setReportCount(image.getReportCount() + 1);
+            if (image.getReportCount() >= 3) {
+                image.setStatus(EventStatus.HIDDEN);
+            }
+            repository.save(image);
+        });
     }
+
 }

@@ -5,6 +5,7 @@ import { useSidebarStore } from "@/store/sidebarStore";
 import axios from "axios";
 import { getCurrentUser } from "aws-amplify/auth";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 interface Event {
   id: number;
@@ -68,6 +69,23 @@ export default function EventSection({
     await fetchEvents();
   };
 
+  const { toast } = useToast();
+
+  const handleReport = async (id: number) => {
+    try {
+      await axios.post(`/api/events/report/${id}`);
+      toast({
+        description:
+          "Report submitted successfully, thank you for your feedback!",
+      });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        description: "Failed to report, please try again later.",
+      });
+    }
+  };
+
   const safeEvents = Array.isArray(events) ? events : [];
 
   // System Announcements 只显示官方消息（无 userSub 或 userSub === 'SYSTEM'）
@@ -110,6 +128,10 @@ export default function EventSection({
         <div className="max-h-64 space-y-3 overflow-y-auto">
           {safeFilteredEvents.map((ev) => (
             <Card key={ev.id} className="space-y-2 p-3">
+              <div className="inline-block rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                Community Event
+              </div>
+
               <div className="font-semibold text-primary">{ev.eventType}</div>
               <p className="text-sm text-muted-foreground">{ev.description}</p>
               {(ev.imageUrls?.length ?? 0) > 0 && (
@@ -130,6 +152,13 @@ export default function EventSection({
                   Delete
                 </Button>
               )}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleReport(ev.id)}
+              >
+                Report
+              </Button>
             </Card>
           ))}
         </div>

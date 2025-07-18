@@ -1,5 +1,6 @@
 package com.movemate.server.repository;
 
+import com.movemate.server.enums.EventStatus;
 import com.movemate.server.model.TrafficEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,4 +12,6 @@ import java.util.List;
 public interface TrafficEventRepository extends JpaRepository<TrafficEvent, Long> {
     void deleteByIdAndUserSub(Long id, String userSub);
     List<TrafficEvent> findByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
+    List<TrafficEvent> findByStatus(EventStatus status);
+
 }

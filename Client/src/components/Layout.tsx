@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Navbar />
       </div>
       <main className="flex flex-1 flex-col overflow-hidden">{children}</main>
+      <Toaster />
     </div>
   );
 }

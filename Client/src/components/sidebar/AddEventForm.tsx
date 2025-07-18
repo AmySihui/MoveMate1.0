@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import {
   Form,
   FormControl,
@@ -16,6 +16,8 @@ import axios from "axios";
 import { getCurrentUser } from "aws-amplify/auth";
 import { useNavigate } from "react-router-dom";
 import { uploadToS3 } from "@/lib/uploadToS3";
+import { useToast } from "@/hooks/use-toast";
+import { Input } from "@/components/ui/input";
 
 const eventFormSchema = z.object({
   eventType: z.string().min(1, "Please select event type"),
@@ -35,6 +37,7 @@ export default function AddEventForm({
     defaultValues: { eventType: "", description: "" },
   });
 
+  const { toast } = useToast();
   const [uploading, setUploading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string>("");
   const navigate = useNavigate();
@@ -47,6 +50,11 @@ export default function AddEventForm({
     } catch (e) {
       console.error("Image upload failed", e);
       setImageUrl("");
+      toast({
+        title: "Image upload failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
     }
     setUploading(false);
   };
@@ -54,7 +62,6 @@ export default function AddEventForm({
   const handleSubmit = async (values: any) => {
     if (!station) return;
 
-    // Step 1: Cognito 登录校验
     let userSub = "";
     try {
       const user = await getCurrentUser();
@@ -69,33 +76,54 @@ export default function AddEventForm({
     try {
       setUploading(true);
 
-      // Step 2: 创建事件（不带 imageUrl）
-      const { data: event } = await axios.post("/api/events", {
-        ...values,
+      await axios.post(
+        "/api/events/create-with-image",
+        {
+          ...values,
+          stopName: station.stationDesc,
+          latitude: station.latitude,
+          longitude: station.longitude,
+          lineName: station.lineName,
+          imageUrl: imageUrl || null,
+          userSub,
+        },
+        {
+          headers: {
+            "X-User-Sub": userSub,
+            "X-Forwarded-For": "127.0.0.1",
+          },
+        },
+      );
+
+      toast({
+        title: "Event submitted successfully",
+        description: "Thank you for your feedback!",
+      });
+
+      form.reset();
+      setImageUrl("");
+      onSubmit();
+    } catch (e: any) {
+      console.log("提交请求：", {
+        eventType: values.eventType,
+        description: values.description,
         stopName: station.stationDesc,
         latitude: station.latitude,
         longitude: station.longitude,
         lineName: station.lineName,
-        status: "pending",
         userSub,
+        imageUrl,
       });
 
-      const eventId = event.id;
+      const status = e?.response?.status;
+      const message =
+        e?.response?.data?.message || "Server error, please try again later.";
 
-      // Step 3: 如果有图片，回调 upload-complete
-      if (imageUrl) {
-        await axios.post("/api/event-images/upload-complete", {
-          eventId,
-          imageUrl,
-        });
-      }
-
-      // Step 4: 完成状态
-      form.reset();
-      setImageUrl("");
-      onSubmit();
-    } catch (e) {
-      console.error("Submit event failed", e);
+      toast({
+        title: status === 400 ? "Invalid Content" : "Event submission failed",
+        description: message,
+        variant: "destructive",
+      });
     } finally {
       setUploading(false);
     }

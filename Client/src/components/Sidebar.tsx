@@ -24,7 +24,7 @@ export default function Sidebar({
     <aside
       className={`flex h-full w-full flex-col bg-white text-black ${className || ""}`}
     >
-      <Card className="flex flex-col space-y-4 overflow-y-auto border-none bg-white p-3 text-black shadow-none">
+      <Card className="flex h-full flex-col space-y-3 overflow-y-auto border-none bg-white p-3 text-black shadow-none">
         <WeatherSection />
         <Separator />
         <SearchSection stations={stations} />
