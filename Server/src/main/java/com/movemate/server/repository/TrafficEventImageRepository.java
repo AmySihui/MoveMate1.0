@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TrafficEventImageRepository extends JpaRepository<TrafficEventImage, Long> {
-    // 根据事件查询对应图片列表
     List<TrafficEventImage> findByTrafficEventId(Long eventId);
 }

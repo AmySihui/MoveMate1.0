@@ -38,7 +38,6 @@ public class LuasController {
         String apiUrl = "https://luasforecasts.rpa.ie/xml/get.ashx?action=forecast&stop=" + stop + "&encrypt=false";
         try {
             RestTemplate restTemplate = new RestTemplate();
-            // 修正编码：删除默认的 StringHttpMessageConverter，加入 UTF-8
             restTemplate.getMessageConverters().removeIf(c -> c instanceof StringHttpMessageConverter);
             restTemplate.getMessageConverters().add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
 

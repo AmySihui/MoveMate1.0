@@ -18,7 +18,6 @@ public class RateLimiterService {
     private final Map<String, LocalDateTime> ipLastSubmitTime = new ConcurrentHashMap<>();
 
     public boolean canSubmit(String userSub, String ip) {
-        // Check daily count
         LocalDate today = LocalDate.now();
         if (!today.equals(userLastDate.get(userSub))) {
             userLastDate.put(userSub, today);
@@ -27,7 +26,6 @@ public class RateLimiterService {
         int count = userDailyCount.getOrDefault(userSub, 0);
         if (count >= DAILY_LIMIT) return false;
 
-        // Check IP frequency
         LocalDateTime lastSubmit = ipLastSubmitTime.getOrDefault(ip, LocalDateTime.MIN);
         if (lastSubmit.plusSeconds(IP_INTERVAL_SECONDS).isAfter(LocalDateTime.now())) {
             return false;

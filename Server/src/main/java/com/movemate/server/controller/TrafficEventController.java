@@ -124,7 +124,6 @@ public class TrafficEventController {
 
     @PostMapping("/create-with-image")
     public TrafficEvent createWithImage(@RequestBody EventWithImageRequest request) {
-        log.info("Controller 收到请求: {}", request);
         return service.createWithImage(request);
     }
 
