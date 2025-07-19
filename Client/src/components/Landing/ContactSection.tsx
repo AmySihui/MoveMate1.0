@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import avatar from "@/assets/avatar.svg";
+import avatar from "@/assets/avatar.png";
 
 export default function ContactSection() {
   return (
@@ -37,8 +37,7 @@ export default function ContactSection() {
         />
         <h3 className="mb-2 text-2xl font-bold text-black">Amy Wang</h3>
         <p className="mb-4 text-lg text-gray-700">
-          Let's make public transit better together! MoveMate is open for
-          contributions, ideas, and feedback.
+          Let's Make Irish Transport Great Again!
         </p>
         <a
           href="mailto:x23326344@student.ncirl.ie"
