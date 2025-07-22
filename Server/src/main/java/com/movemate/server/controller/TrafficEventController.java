@@ -6,6 +6,8 @@ import com.movemate.server.model.TrafficEvent;
 import com.movemate.server.repository.TrafficEventRepository;
 import com.movemate.server.service.RateLimiterService;
 import com.movemate.server.service.TrafficEventService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -20,17 +22,20 @@ import java.util.List;
 @RequestMapping("/api/events")
 @RequiredArgsConstructor
 @Slf4j
+@Tag(name = "Traffic Events", description = "Events management")
 public class TrafficEventController {
 
     private final TrafficEventService service;
-    private final TrafficEventRepository trafficEventRepository;
     private final RateLimiterService rateLimiter;
+    private final TrafficEventService trafficEventService;
 
+    @Operation(summary = "Get all events")
     @GetMapping
     public List<TrafficEvent> getAll() {
         return service.findAllActive();
     }
 
+    @Operation(summary = "Find a specific event")
     @GetMapping("/{id}")
     public ResponseEntity<TrafficEvent> getById(@PathVariable Long id) {
         return service.findById(id)
@@ -38,6 +43,7 @@ public class TrafficEventController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "User upload event")
     @PostMapping("/create")
     public ResponseEntity<String> create(@RequestBody TrafficEvent event,
                                          @RequestHeader("X-User-Sub") String userSub,
@@ -51,12 +57,15 @@ public class TrafficEventController {
         return ResponseEntity.ok(event.getId().toString());
     }
 
+    @Operation(summary = "flag inappropriate event")
     @PostMapping("/report/{id}")
     public ResponseEntity<String> reportEvent(@PathVariable Long id) {
         service.reportEvent(id);
         return ResponseEntity.ok("Event reported successfully");
     }
 
+    // not provide maybe next version
+    @Operation(summary = "User modify event")
     @PutMapping("/{id}")
     public ResponseEntity<TrafficEvent> update(@PathVariable Long id, @RequestBody TrafficEvent event) {
         return service.findById(id)
@@ -74,6 +83,7 @@ public class TrafficEventController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "User delete event")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id, @RequestParam String userSub) {
         boolean deleted = service.deleteByIdAndUserSub(id, userSub);
@@ -84,11 +94,13 @@ public class TrafficEventController {
         }
     }
 
+    @Operation(summary = "Get all events with images")
     @GetMapping("/with-images")
     public List<TrafficEventDTO> getAllWithImages() {
         return service.findAllWithImages();
     }
 
+    @Operation(summary = "Get specific event with images")
     @GetMapping("/{id}/with-images")
     public ResponseEntity<TrafficEventDTO> getByIdWithImages(@PathVariable Long id) {
         return service.findByIdWithImages(id)
@@ -96,32 +108,13 @@ public class TrafficEventController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "Get today's announcements")
     @GetMapping("/announcements")
     public ResponseEntity<List<TrafficEventDTO>> getTodayEvents() {
-        LocalDateTime startOfDay = LocalDate.now(ZoneOffset.UTC).atStartOfDay();
-        LocalDateTime endOfDay = startOfDay.plusDays(1);
-
-        List<TrafficEvent> events = trafficEventRepository.findByCreatedAtBetween(startOfDay, endOfDay);
-
-        List<TrafficEventDTO> eventDTOs = events.stream().map(event -> {
-            TrafficEventDTO dto = new TrafficEventDTO();
-            dto.setId(event.getId());
-            dto.setEventType(event.getEventType());
-            dto.setDescription(event.getDescription());
-            dto.setLineName(event.getLineName());
-            dto.setStopName(event.getStopName());
-            dto.setLatitude(event.getLatitude());
-            dto.setLongitude(event.getLongitude());
-            dto.setStatus(String.valueOf(event.getStatus()));
-            dto.setUserSub(event.getUserSub());
-            dto.setCreatedAt(event.getCreatedAt());
-            dto.setImageUrls(List.of());
-            return dto;
-        }).toList();
-
-        return ResponseEntity.ok(eventDTOs);
+        return trafficEventService.getTodayEvents();
     }
 
+    @Operation(summary = "Create event with images")
     @PostMapping("/create-with-image")
     public TrafficEvent createWithImage(@RequestBody EventWithImageRequest request) {
         return service.createWithImage(request);

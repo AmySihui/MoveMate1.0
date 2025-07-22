@@ -1,5 +1,6 @@
 package com.movemate.server.exception;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,13 +20,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(ex.getStatusCode()).body(response);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, String>> handleGeneralException(Exception ex) {
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "Server error, please try again later.");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-    }
-
     @ExceptionHandler(org.springframework.dao.DataIntegrityViolationException.class)
     public ResponseEntity<Map<String, String>> handleDataIntegrityViolation(Exception ex) {
         Map<String, String> response = new HashMap<>();
@@ -33,5 +27,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleAllExceptions(Exception ex, HttpServletRequest request) throws Exception {
+        String path = request.getRequestURI();
+        // 放行 OpenAPI 相关请求
+        if (path.startsWith("/v3/api-docs") || path.startsWith("/swagger-ui")) {
+            throw ex;
+        }
 
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Server error, please try again later.");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
 }

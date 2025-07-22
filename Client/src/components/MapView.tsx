@@ -27,7 +27,6 @@ export default function MapView() {
     setMapRef(map);
 
     map.on("load", async () => {
-      // DART 线路
       const dartLinesRes = await axios.get("/api/dart/lines");
       map.addSource("dart-lines", { type: "geojson", data: dartLinesRes.data });
       map.addLayer({
@@ -37,7 +36,6 @@ export default function MapView() {
         paint: { "line-color": "#1DB954", "line-width": 4 },
       });
 
-      // DART 站点
       const dartStationsRes = await axios.get("/api/dart/stations");
       const dartStationsArray = dartStationsRes.data;
       const dartStationsGeoJSON = {
@@ -70,7 +68,6 @@ export default function MapView() {
         },
       });
 
-      // LUAS 线路
       const luasLinesRes = await axios.get("/api/luas/lines");
       map.addSource("luas-lines", { type: "geojson", data: luasLinesRes.data });
       map.addLayer({
@@ -78,7 +75,6 @@ export default function MapView() {
         type: "line",
         source: "luas-lines",
         paint: {
-          // 按 ref 区分红线绿线
           "line-color": [
             "match",
             ["get", "ref"],
@@ -92,11 +88,10 @@ export default function MapView() {
         },
       });
 
-      // LUAS 站点
       const luasStationsRes = await axios.get("/api/luas/stations");
       const luasStationsArray =
         luasStationsRes.data.features || luasStationsRes.data;
-      // 去重
+
       const uniqueStationsMap = new Map();
       luasStationsArray.forEach((station: any) => {
         const name = station.properties.name;
@@ -125,7 +120,6 @@ export default function MapView() {
         },
       });
 
-      // 鼠标悬停显示 luas 站名
       const popup = new mapboxgl.Popup({
         closeButton: false,
         closeOnClick: false,
@@ -139,7 +133,7 @@ export default function MapView() {
         map.getCanvas().style.cursor = "";
         popup.remove();
       });
-      // 鼠标悬停显示 dart 站名
+
       const dartPopup = new mapboxgl.Popup({
         closeButton: false,
         closeOnClick: false,
@@ -170,7 +164,7 @@ export default function MapView() {
           setSidebarOpen(true);
         }
       });
-      // 点击 luas 站点，联动侧边栏
+
       map.on("click", "luas-stations-layer", (e) => {
         const props = e.features?.[0].properties;
         if (props) {

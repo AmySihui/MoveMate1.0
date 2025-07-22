@@ -11,10 +11,13 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,6 +31,8 @@ public class TrafficEventService {
     private final TrafficEventRepository eventRepository;
     private final TrafficEventImageRepository imageRepository;
     private final HuggingfaceModerationService moderationService;
+    private final TrafficEventRepository trafficEventRepository;
+
 
     private static final int REPORT_THRESHOLD = 3;
     private static final int EXPIRE_DAYS = 7;
@@ -114,7 +119,6 @@ public class TrafficEventService {
         return true;
     }
 
-
     public TrafficEvent createWithImage(EventWithImageRequest request) {
         if (moderationService.isFlagged(request.getDescription())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Your event contains sensitive words, please modify and try again.");
@@ -141,6 +145,31 @@ public class TrafficEventService {
         }
 
         return savedEvent;
+    }
+
+    public ResponseEntity<List<TrafficEventDTO>> getTodayEvents() {
+        LocalDateTime startOfDay = LocalDate.now(ZoneOffset.UTC).atStartOfDay();
+        LocalDateTime endOfDay = startOfDay.plusDays(1);
+
+        List<TrafficEvent> events = trafficEventRepository.findByCreatedAtBetween(startOfDay, endOfDay);
+
+        List<TrafficEventDTO> eventDTOs = events.stream().map(event -> {
+            TrafficEventDTO dto = new TrafficEventDTO();
+            dto.setId(event.getId());
+            dto.setEventType(event.getEventType());
+            dto.setDescription(event.getDescription());
+            dto.setLineName(event.getLineName());
+            dto.setStopName(event.getStopName());
+            dto.setLatitude(event.getLatitude());
+            dto.setLongitude(event.getLongitude());
+            dto.setStatus(String.valueOf(event.getStatus()));
+            dto.setUserSub(event.getUserSub());
+            dto.setCreatedAt(event.getCreatedAt());
+            dto.setImageUrls(List.of());
+            return dto;
+        }).toList();
+
+        return ResponseEntity.ok(eventDTOs);
     }
 
 
