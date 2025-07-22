@@ -7,7 +7,11 @@ import { useSidebarStore } from "@/store/sidebarStore";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN!;
 
-export default function MapView() {
+export default function MapView({
+  setShowSidebar,
+}: {
+  setShowSidebar: (v: boolean) => void;
+}) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const setMapRef = useMapStore((state) => state.setMapRef);
@@ -15,6 +19,7 @@ export default function MapView() {
     (state) => state.setSelectedStation,
   );
   const setSidebarOpen = useSidebarStore((state) => state.setSidebarOpen);
+  const flyToStation = useMapStore((s) => s.flyToStation);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -150,7 +155,7 @@ export default function MapView() {
         map.getCanvas().style.cursor = "";
         dartPopup.remove();
       });
-      // 点击 dart 站点，联动侧边栏
+
       map.on("click", "dart-stations-layer", (e) => {
         const props = e.features?.[0].properties;
         if (props) {
@@ -161,7 +166,12 @@ export default function MapView() {
             longitude: e.lngLat.lng,
             lineName: "DART",
           });
-          setSidebarOpen(true);
+          setShowSidebar(true);
+          flyToStation({
+            stationDesc: props.stationDesc || props.name,
+            latitude: e.lngLat.lat,
+            longitude: e.lngLat.lng,
+          });
         }
       });
 
@@ -175,7 +185,12 @@ export default function MapView() {
             longitude: e.lngLat.lng,
             lineName: "LUAS",
           });
-          setSidebarOpen(true);
+          setShowSidebar(true);
+          flyToStation({
+            stationDesc: props.stationDesc || props.name,
+            latitude: e.lngLat.lat,
+            longitude: e.lngLat.lng,
+          });
         }
       });
     });

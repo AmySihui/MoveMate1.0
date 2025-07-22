@@ -25,7 +25,7 @@ public class HuggingfaceModerationService {
 
     private WebClient webClient;
 
-    @PostConstruct
+@PostConstruct
     private void init() {
         this.webClient = WebClient.builder()
                 .baseUrl(apiUrl)

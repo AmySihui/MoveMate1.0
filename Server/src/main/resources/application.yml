@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://movemate-db.czgeuuoi06xx.eu-north-1.rds.amazonaws.com:5432/postgres
+    url: jdbc:postgresql://movemate-db.czgeuuoi06xx.eu-north-1.rds.amazonaws.com:5432/
     username: postgres
     password: db12345678
     driver-class-name: org.postgresql.Driver

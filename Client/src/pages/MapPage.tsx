@@ -15,7 +15,7 @@ export default function MapPage() {
   return (
     <Layout>
       <div className="relative h-[calc(100vh-64px)] w-full">
-        <MapView />
+        <MapView setShowSidebar={setShowSidebar} />
 
         <button
           onClick={(e) => {
