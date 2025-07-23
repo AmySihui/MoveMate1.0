@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/lib/amplify-config.ts";
 import "@aws-amplify/ui-react/styles.css";
+import "./lib/setupAxios";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
