@@ -10,10 +10,7 @@ MoveMate is a public transportation real-time tracking application designed spec
 
 Below is a demonstration video showcasing the features of MoveMate:
 
-<video width="640" height="360" controls>
-  <source src="./assets/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<video src="assets/demo.mp4" controls autoplay loop muted playsinline width="100%"></video>
 
 ---
 
