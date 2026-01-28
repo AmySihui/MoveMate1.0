@@ -6,6 +6,17 @@ MoveMate is a public transportation real-time tracking application designed spec
 
 ---
 
+## Demo Video
+
+Below is a demonstration video showcasing the features of MoveMate:
+
+<video width="640" height="360" controls>
+  <source src="./assets/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+---
+
 ## Key Features
 
 - **DART**: Real-time train location tracking and accurate arrival predictions.
