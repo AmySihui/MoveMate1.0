@@ -9,8 +9,10 @@ MoveMate is a public transportation real-time tracking application designed spec
 ## Demo Video
 
 Below is a demonstration video showcasing the features of MoveMate:
+https://github.com/user-attachments/assets/b9eb5517-43d6-4b56-9c03-3d437988abd9
 
-<video src="assets/demo.mp4" controls autoplay loop muted playsinline width="100%"></video>
+
+
 
 ---
 
